@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Companion | Testimonials</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sage-green: #4e6e5d;
+      --soft-copper: #b27f4f;
+      --charcoal: #2d2d2d;
+      --off-white: #f8f3ed;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+      color: var(--charcoal);
+      line-height: 1.7;
+    }
+
+    nav {
+      background-color: var(--off-white);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: var(--charcoal);
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--soft-copper);
+    }
+
+    header {
+      background-color: var(--sage-green);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.4rem;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .testimonial {
+      background-color: var(--off-white);
+      border-left: 4px solid var(--soft-copper);
+      padding: 1.5rem;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .testimonial p {
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    .testimonial span {
+      display: block;
+      font-weight: 600;
+      color: var(--sage-green);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div><strong>Course Companion</strong></div>
+    <div>
+      <a href="index.html">Join Now</a>
+      <a href="course-overview.html">Course Overview</a>
+      <a href="about.html">About Me</a>
+      <a href="faq.html">FAQs</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>What Parents Are Saying</h1>
+  </header>
+
+  <section class="testimonials">
+    <div class="testimonial">
+      <p>"Course Companion helped me finally understand what my daughter is really going through on the course. Our car rides home are peaceful now—and she's even talking more."</p>
+      <span>– Parent of a 14-year-old junior golfer</span>
+    </div>
+
+    <div class="testimonial">
+      <p>"I didn’t realize how much pressure I was adding until this course opened my eyes. Now, my son actually invites me to his rounds again."</p>
+      <span>– Father of a high school golf recruit</span>
+    </div>
+
+    <div class="testimonial">
+      <p>"The lessons aren’t just for sports—they helped us become better listeners and more supportive parents in general. I wish I had this years ago."</p>
+      <span>– Mother of a middle school golfer</span>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Course Companion. All rights reserved.
+  </footer>
+</body>
+</html>
