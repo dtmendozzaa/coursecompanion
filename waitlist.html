@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Course Companion | Join Now</title>
+  <title>Join the Waitlist | Course Companion</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -48,53 +48,48 @@
 
     header h1 {
       margin: 0;
-      font-size: 2.8rem;
+      font-size: 2.5rem;
     }
 
-    header p {
-      font-size: 1.25rem;
+    section {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: var(--off-white);
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
       margin-top: 1rem;
-      color: #e0ece7;
+      font-weight: 500;
     }
 
-    .cta {
-      margin-top: 2rem;
+    input {
+      padding: 0.75rem;
+      margin-top: 0.25rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
     }
 
-    .cta a {
+    button {
+      margin-top: 1.5rem;
+      padding: 0.75rem;
       background-color: var(--soft-copper);
       color: white;
-      padding: 0.75rem 1.5rem;
-      text-decoration: none;
+      border: none;
       border-radius: 5px;
       font-weight: 600;
+      cursor: pointer;
     }
 
-    .landing-images {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 3rem 2rem;
-      flex-wrap: wrap;
-    }
-
-    .image-block {
-      max-width: 400px;
-      text-align: center;
-    }
-
-    .image-block img {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .image-block p {
-      margin-top: 0.5rem;
-      font-size: 0.95rem;
-      color: #555;
-      font-style: italic;
+    button:hover {
+      background-color: #a36f44;
     }
 
     footer {
@@ -119,25 +114,45 @@
   </nav>
 
   <header>
-    <h1>Become the Parent Your Athlete Needs</h1>
-    <p>Support your junior golfer emotionally and mentally through every round—win or lose.</p>
-    <div class="cta">
-      <a href="waitlist.html">Join the Waitlist</a> <!-- ✅ Now links to separate page -->
-    </div>
+    <h1>Join the Waitlist</h1>
   </header>
 
-  <section class="landing-images">
-    <div class="image-block">
-      <img src="tamuswing.jpg" alt="Daniel Swinging Golf Club as College Athlete">
-    </div>
-    <div class="image-block">
-      <img src="daddyandmegolf.JPEG" alt="Young Daniel with Dad and Golf Clubs">
-      <p>My dad and I</p>
-    </div>
+  <section>
+    <form id="waitlist-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <button type="submit">Submit</button>
+    </form>
   </section>
 
   <footer>
     &copy; 2025 Course Companion. All rights reserved.
   </footer>
+
+  <script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwExsFfi-uPa1VoH265MTmCct8MkTKaNQJMtr6WbtFJ4M_7enDceP6KRyxv3vyvhA2iHQ/exec";
+    const form = document.getElementById('waitlist-form');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      fetch(scriptURL, { method: 'POST', body: formData })
+        .then(response => {
+          if (response.ok) {
+            window.location.href = "thankyou.html";
+          } else {
+            alert("Something went wrong. Please try again.");
+          }
+        })
+        .catch(error => {
+          console.error('Error!', error.message);
+          alert("Submission failed. Please try again later.");
+        });
+    });
+  </script>
 </body>
 </html>
